@@ -4,59 +4,57 @@
 Nom : BAKKALI Yahya
 Matricule : 000445166
 """
-
 from sys import argv
-
 f = open(argv[1])
-it = 0
-M = 0
-N = 0
-L = 0
-l_i = []
 
+# Indices :
+M, N = 0, 0
+# Constantes :
+L, l_i = 0, []
+
+# Lire l'instance et extraire les données.
+it = 0
 for line in f:
+    value = line.strip().split()
     if it == 0:
-        value = line.strip().split()
         M = int(value[1])
-        L = float(value[0])
+        L = value[0]
         it += 1
     else:
-        value = line.strip().split()
         N += int(value[1])
         for i in range(int(value[1])):
             l_i.append((value[0]))
 
 f.close()
 
-output_file = "Minimize\n" \
-    "\tobj: " + " + ".join("m_{}".format(i) for i in range(1, M + 1)) + "\n" \
-    "Subject To\n "
+# Fonction objective :
+objective = "\tobj: " + " + ".join("m_{}".format(i) for i in range(1, M + 1)) + "\n"
 
+# Contraintes :
+constraints = ""
+# Contrainte 1 :
 for j in range(1, M + 1):
-    output_file += "\tcontrainte_1_{}: ".format(j) + " + ".join("{} x_{}_{}".format(l_i[i - 1], i, j) for i in range(1, N + 1)) + " <= {}\n".format(L)
-
+    constraints += "\tconstraint_1_{}: ".format(j) + " + ".join("{} x_{}_{}".format(l_i[i - 1], i, j) for i in range(1, N + 1))
+    constraints += " <= {}\n".format(L)
+# Contrainte 2 :
 for i in range(1, N + 1):
-    output_file += "\tcontrainte_2_{}: ".format(i) + " + ".join("x_{}_{}".format(i, j) for j in range(1, M + 1)) + " = 1\n"
-
-output_file += "\tcontrainte_3: " + " + ".join("{} m_{}".format(L,i) for i in range(1, M + 1))
-
+    constraints += "\tconstraint_2_{}: ".format(i) + " + ".join("x_{}_{}".format(i, j) for j in range(1, M + 1))
+    constraints += " = 1\n"
+# Contrainte 3 :
+constraints += "\tconstraint_3: " + " + ".join("{} m_{}".format(L, i) for i in range(1, M + 1))
 for j in range(1, M + 1):
-    output_file += " - "
-    output_file += " - ".join("{} x_{}_{}".format(l_i[i - 1], i, j) for i in range(1, N + 1))
-output_file += " >= 0\n"
+    constraints += "".join(" - {} x_{}_{}".format(l_i[i - 1], i, j) for i in range(1, N + 1))
+constraints += " >= 0\n"
 
-output_file += "Binary\n"
+# Variables de décision :
+# m_j :
+variables = "".join("\tm_{}\n".format(i) for i in range(1, M + 1))
+# x_i_j :
+variables += "".join("\tx_{}_{}\n".format(i, j) for i in range(1, N + 1) for j in range(1, M + 1))
 
-for i in range(1, M + 1):
-    output_file += "\tm_{}\n".format(i)
-
-for i in range(1, N + 1):
-    for j in range(1, M + 1):
-        output_file += "\tx_{}_{}\n".format(i, j)
-output_file += "End\n"
-
-print(output_file)
+# Instance en langage CPLEX LP
+CPLEX_instance = "Minimize\n{}Subject To\n{}BINARY\n{}END".format(objective, constraints, variables)
 
 f = open("file.lp", "w")
-f.write(output_file)
+f.write(CPLEX_instance)
 f.close()
