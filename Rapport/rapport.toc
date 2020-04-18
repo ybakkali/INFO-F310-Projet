@@ -3,4 +3,4 @@
 \contentsline {section}{\numberline {2}Mod\IeC {\`e}le}{2}{section.2}
 \contentsline {section}{\numberline {3}Fichier CPLEX LP g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}}{3}{section.3}
 \contentsline {section}{\numberline {4}Log de GLPK obtenu}{9}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{16}{section.5}
+\contentsline {section}{\numberline {5}Explication du retour obtenu dans le fichier log}{16}{section.5}
