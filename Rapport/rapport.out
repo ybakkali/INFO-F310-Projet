@@ -1,5 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Mod\350le}{}% 2
-\BOOKMARK [1][-]{section.3}{Fichier CPLEX LP g\351n\351r\351}{}% 3
-\BOOKMARK [1][-]{section.4}{Log de GLPK obtenu}{}% 4
-\BOOKMARK [1][-]{section.5}{Explication du retour obtenu dans le fichier log}{}% 5
+\BOOKMARK [1][-]{section.3}{Script Python}{}% 3
+\BOOKMARK [1][-]{section.4}{Fichier CPLEX LP g\351n\351r\351}{}% 4
+\BOOKMARK [1][-]{section.5}{Explication du fichier CPLEX LP g\351n\351r\351}{}% 5
+\BOOKMARK [1][-]{section.6}{Log de GLPK obtenu}{}% 6
+\BOOKMARK [1][-]{section.7}{Explication du retour obtenu dans le fichier log}{}% 7

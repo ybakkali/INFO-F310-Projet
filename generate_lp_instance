@@ -48,8 +48,6 @@ variables = "".join("\tm_{}\n".format(i) for i in range(1, M + 1))
 variables += "".join("\tx_{}_{}({})\n".format(i, j, l_i[i - 1]) for i in range(1, N + 1) for j in range(1, M + 1))
 
 # Instance en langage CPLEX LP
-CPLEX_instance = "Minimize\n{}Subject To\n{}BINARY\n{}END".format(objective, constraints, variables)
+CPLEX_instance = "Minimize\n{}Subject To\n{}Binary\n{}End".format(objective, constraints, variables)
 
-f = open("file.lp", "w")
-f.write(CPLEX_instance)
-f.close()
+print(CPLEX_instance)
