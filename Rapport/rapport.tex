@@ -112,23 +112,23 @@ Variables de décision :
 \end{alignat}
 \end{algorithm}
 
-Les contraintes (2) assurent que si une planche est utilisée pour la 
+Les contraintes (\ref{c1}) assurent que si une planche est utilisée pour la 
 découpe, sa longueur doit être supérieure ou égale à la somme des 
-longueurs de toutes les panneaux découpées depuis la même planche. 
-D'autre part, (3) garantissent que chaque panneau a été correctement 
-découpée et seulement à partir d`une des planches disponibles.
+longueurs de tous les panneaux découpés depuis la même planche. 
+D'autre part, (\ref{c2}) garantissent que chaque panneau a été correctement 
+découpé et seulement à partir d`une des planches disponibles.
 \section{Script Python}
 Le script python \texttt{generate\_lp\_instance} est un script qui, 
-en donnant un paramètre de chemin de fichier d'instance, génère le 
+en donnant en paramètre un chemin de fichier d'instance, génère le 
 fichier CPLEX LP approprié qui modélise le problème.
 
 Les lignes du fichier d'instance contiennent deux valeurs:
 \begin{itemize}
-	\item un flotteur représentant la longueur en mètres des planches 
-	pour la première ligne et des panneaux pour les lignes suivantes
+	\item un flottant représentant la longueur en mètres des planches 
+	pour la première ligne et des panneaux pour les lignes suivantes.
 	\item un nombre entier correspondant au nombre de planches 
 	disponibles pour la première ligne et au nombre de panneaux à 
-	couper pour le reste des lignes.
+	découper pour le reste des lignes.
 \end{itemize}
 
 En parcourant le fichier d'instance, quatre variables ont été créées $M,$
@@ -149,36 +149,36 @@ Ces variables sont utilisées pour générer le fichier CPLEX LP adéquat.
 Minimize
 	obj: m_1 + m_2 + m_3 + m_4 + m_5 + m_6 + m_7 + m_8
 Subject To
-	c_1_1: 4.0 m_1 - 1.5 x_1_1(1.5) - 1.5 x_2_1(1.5) - 1.5 x_3_1(1.5) - 1.5 x_4_1(1.5) - 0.75 x_5_1(0.75) - 0.75 x_6_1(0.75) - 0.75 x_7_1(0.75) - 0.75 x_8_1(0.75) - 0.75 x_9_1(0.75) - 0.75 x_10_1(0.75) - 0.22 x_11_1(0.22) - 0.22 x_12_1(0.22) - 0.22 x_13_1(0.22) - 0.22 x_14_1(0.22) - 0.22 x_15_1(0.22) - 0.22 x_16_1(0.22) - 0.22 x_17_1(0.22) - 0.22 x_18_1(0.22) - 0.22 x_19_1(0.22) - 0.22 x_20_1(0.22) - 0.22 x_21_1(0.22) - 0.22 x_22_1(0.22) >= 0
-	c_1_2: 4.0 m_2 - 1.5 x_1_2(1.5) - 1.5 x_2_2(1.5) - 1.5 x_3_2(1.5) - 1.5 x_4_2(1.5) - 0.75 x_5_2(0.75) - 0.75 x_6_2(0.75) - 0.75 x_7_2(0.75) - 0.75 x_8_2(0.75) - 0.75 x_9_2(0.75) - 0.75 x_10_2(0.75) - 0.22 x_11_2(0.22) - 0.22 x_12_2(0.22) - 0.22 x_13_2(0.22) - 0.22 x_14_2(0.22) - 0.22 x_15_2(0.22) - 0.22 x_16_2(0.22) - 0.22 x_17_2(0.22) - 0.22 x_18_2(0.22) - 0.22 x_19_2(0.22) - 0.22 x_20_2(0.22) - 0.22 x_21_2(0.22) - 0.22 x_22_2(0.22) >= 0
-	c_1_3: 4.0 m_3 - 1.5 x_1_3(1.5) - 1.5 x_2_3(1.5) - 1.5 x_3_3(1.5) - 1.5 x_4_3(1.5) - 0.75 x_5_3(0.75) - 0.75 x_6_3(0.75) - 0.75 x_7_3(0.75) - 0.75 x_8_3(0.75) - 0.75 x_9_3(0.75) - 0.75 x_10_3(0.75) - 0.22 x_11_3(0.22) - 0.22 x_12_3(0.22) - 0.22 x_13_3(0.22) - 0.22 x_14_3(0.22) - 0.22 x_15_3(0.22) - 0.22 x_16_3(0.22) - 0.22 x_17_3(0.22) - 0.22 x_18_3(0.22) - 0.22 x_19_3(0.22) - 0.22 x_20_3(0.22) - 0.22 x_21_3(0.22) - 0.22 x_22_3(0.22) >= 0
-	c_1_4: 4.0 m_4 - 1.5 x_1_4(1.5) - 1.5 x_2_4(1.5) - 1.5 x_3_4(1.5) - 1.5 x_4_4(1.5) - 0.75 x_5_4(0.75) - 0.75 x_6_4(0.75) - 0.75 x_7_4(0.75) - 0.75 x_8_4(0.75) - 0.75 x_9_4(0.75) - 0.75 x_10_4(0.75) - 0.22 x_11_4(0.22) - 0.22 x_12_4(0.22) - 0.22 x_13_4(0.22) - 0.22 x_14_4(0.22) - 0.22 x_15_4(0.22) - 0.22 x_16_4(0.22) - 0.22 x_17_4(0.22) - 0.22 x_18_4(0.22) - 0.22 x_19_4(0.22) - 0.22 x_20_4(0.22) - 0.22 x_21_4(0.22) - 0.22 x_22_4(0.22) >= 0
-	c_1_5: 4.0 m_5 - 1.5 x_1_5(1.5) - 1.5 x_2_5(1.5) - 1.5 x_3_5(1.5) - 1.5 x_4_5(1.5) - 0.75 x_5_5(0.75) - 0.75 x_6_5(0.75) - 0.75 x_7_5(0.75) - 0.75 x_8_5(0.75) - 0.75 x_9_5(0.75) - 0.75 x_10_5(0.75) - 0.22 x_11_5(0.22) - 0.22 x_12_5(0.22) - 0.22 x_13_5(0.22) - 0.22 x_14_5(0.22) - 0.22 x_15_5(0.22) - 0.22 x_16_5(0.22) - 0.22 x_17_5(0.22) - 0.22 x_18_5(0.22) - 0.22 x_19_5(0.22) - 0.22 x_20_5(0.22) - 0.22 x_21_5(0.22) - 0.22 x_22_5(0.22) >= 0
-	c_1_6: 4.0 m_6 - 1.5 x_1_6(1.5) - 1.5 x_2_6(1.5) - 1.5 x_3_6(1.5) - 1.5 x_4_6(1.5) - 0.75 x_5_6(0.75) - 0.75 x_6_6(0.75) - 0.75 x_7_6(0.75) - 0.75 x_8_6(0.75) - 0.75 x_9_6(0.75) - 0.75 x_10_6(0.75) - 0.22 x_11_6(0.22) - 0.22 x_12_6(0.22) - 0.22 x_13_6(0.22) - 0.22 x_14_6(0.22) - 0.22 x_15_6(0.22) - 0.22 x_16_6(0.22) - 0.22 x_17_6(0.22) - 0.22 x_18_6(0.22) - 0.22 x_19_6(0.22) - 0.22 x_20_6(0.22) - 0.22 x_21_6(0.22) - 0.22 x_22_6(0.22) >= 0
-	c_1_7: 4.0 m_7 - 1.5 x_1_7(1.5) - 1.5 x_2_7(1.5) - 1.5 x_3_7(1.5) - 1.5 x_4_7(1.5) - 0.75 x_5_7(0.75) - 0.75 x_6_7(0.75) - 0.75 x_7_7(0.75) - 0.75 x_8_7(0.75) - 0.75 x_9_7(0.75) - 0.75 x_10_7(0.75) - 0.22 x_11_7(0.22) - 0.22 x_12_7(0.22) - 0.22 x_13_7(0.22) - 0.22 x_14_7(0.22) - 0.22 x_15_7(0.22) - 0.22 x_16_7(0.22) - 0.22 x_17_7(0.22) - 0.22 x_18_7(0.22) - 0.22 x_19_7(0.22) - 0.22 x_20_7(0.22) - 0.22 x_21_7(0.22) - 0.22 x_22_7(0.22) >= 0
-	c_1_8: 4.0 m_8 - 1.5 x_1_8(1.5) - 1.5 x_2_8(1.5) - 1.5 x_3_8(1.5) - 1.5 x_4_8(1.5) - 0.75 x_5_8(0.75) - 0.75 x_6_8(0.75) - 0.75 x_7_8(0.75) - 0.75 x_8_8(0.75) - 0.75 x_9_8(0.75) - 0.75 x_10_8(0.75) - 0.22 x_11_8(0.22) - 0.22 x_12_8(0.22) - 0.22 x_13_8(0.22) - 0.22 x_14_8(0.22) - 0.22 x_15_8(0.22) - 0.22 x_16_8(0.22) - 0.22 x_17_8(0.22) - 0.22 x_18_8(0.22) - 0.22 x_19_8(0.22) - 0.22 x_20_8(0.22) - 0.22 x_21_8(0.22) - 0.22 x_22_8(0.22) >= 0
-	c_2_1: x_1_1(1.5) + x_1_2(1.5) + x_1_3(1.5) + x_1_4(1.5) + x_1_5(1.5) + x_1_6(1.5) + x_1_7(1.5) + x_1_8(1.5) = 1
-	c_2_2: x_2_1(1.5) + x_2_2(1.5) + x_2_3(1.5) + x_2_4(1.5) + x_2_5(1.5) + x_2_6(1.5) + x_2_7(1.5) + x_2_8(1.5) = 1
-	c_2_3: x_3_1(1.5) + x_3_2(1.5) + x_3_3(1.5) + x_3_4(1.5) + x_3_5(1.5) + x_3_6(1.5) + x_3_7(1.5) + x_3_8(1.5) = 1
-	c_2_4: x_4_1(1.5) + x_4_2(1.5) + x_4_3(1.5) + x_4_4(1.5) + x_4_5(1.5) + x_4_6(1.5) + x_4_7(1.5) + x_4_8(1.5) = 1
-	c_2_5: x_5_1(0.75) + x_5_2(0.75) + x_5_3(0.75) + x_5_4(0.75) + x_5_5(0.75) + x_5_6(0.75) + x_5_7(0.75) + x_5_8(0.75) = 1
-	c_2_6: x_6_1(0.75) + x_6_2(0.75) + x_6_3(0.75) + x_6_4(0.75) + x_6_5(0.75) + x_6_6(0.75) + x_6_7(0.75) + x_6_8(0.75) = 1
-	c_2_7: x_7_1(0.75) + x_7_2(0.75) + x_7_3(0.75) + x_7_4(0.75) + x_7_5(0.75) + x_7_6(0.75) + x_7_7(0.75) + x_7_8(0.75) = 1
-	c_2_8: x_8_1(0.75) + x_8_2(0.75) + x_8_3(0.75) + x_8_4(0.75) + x_8_5(0.75) + x_8_6(0.75) + x_8_7(0.75) + x_8_8(0.75) = 1
-	c_2_9: x_9_1(0.75) + x_9_2(0.75) + x_9_3(0.75) + x_9_4(0.75) + x_9_5(0.75) + x_9_6(0.75) + x_9_7(0.75) + x_9_8(0.75) = 1
-	c_2_10: x_10_1(0.75) + x_10_2(0.75) + x_10_3(0.75) + x_10_4(0.75) + x_10_5(0.75) + x_10_6(0.75) + x_10_7(0.75) + x_10_8(0.75) = 1
-	c_2_11: x_11_1(0.22) + x_11_2(0.22) + x_11_3(0.22) + x_11_4(0.22) + x_11_5(0.22) + x_11_6(0.22) + x_11_7(0.22) + x_11_8(0.22) = 1
-	c_2_12: x_12_1(0.22) + x_12_2(0.22) + x_12_3(0.22) + x_12_4(0.22) + x_12_5(0.22) + x_12_6(0.22) + x_12_7(0.22) + x_12_8(0.22) = 1
-	c_2_13: x_13_1(0.22) + x_13_2(0.22) + x_13_3(0.22) + x_13_4(0.22) + x_13_5(0.22) + x_13_6(0.22) + x_13_7(0.22) + x_13_8(0.22) = 1
-	c_2_14: x_14_1(0.22) + x_14_2(0.22) + x_14_3(0.22) + x_14_4(0.22) + x_14_5(0.22) + x_14_6(0.22) + x_14_7(0.22) + x_14_8(0.22) = 1
-	c_2_15: x_15_1(0.22) + x_15_2(0.22) + x_15_3(0.22) + x_15_4(0.22) + x_15_5(0.22) + x_15_6(0.22) + x_15_7(0.22) + x_15_8(0.22) = 1
-	c_2_16: x_16_1(0.22) + x_16_2(0.22) + x_16_3(0.22) + x_16_4(0.22) + x_16_5(0.22) + x_16_6(0.22) + x_16_7(0.22) + x_16_8(0.22) = 1
-	c_2_17: x_17_1(0.22) + x_17_2(0.22) + x_17_3(0.22) + x_17_4(0.22) + x_17_5(0.22) + x_17_6(0.22) + x_17_7(0.22) + x_17_8(0.22) = 1
-	c_2_18: x_18_1(0.22) + x_18_2(0.22) + x_18_3(0.22) + x_18_4(0.22) + x_18_5(0.22) + x_18_6(0.22) + x_18_7(0.22) + x_18_8(0.22) = 1
-	c_2_19: x_19_1(0.22) + x_19_2(0.22) + x_19_3(0.22) + x_19_4(0.22) + x_19_5(0.22) + x_19_6(0.22) + x_19_7(0.22) + x_19_8(0.22) = 1
-	c_2_20: x_20_1(0.22) + x_20_2(0.22) + x_20_3(0.22) + x_20_4(0.22) + x_20_5(0.22) + x_20_6(0.22) + x_20_7(0.22) + x_20_8(0.22) = 1
-	c_2_21: x_21_1(0.22) + x_21_2(0.22) + x_21_3(0.22) + x_21_4(0.22) + x_21_5(0.22) + x_21_6(0.22) + x_21_7(0.22) + x_21_8(0.22) = 1
-	c_2_22: x_22_1(0.22) + x_22_2(0.22) + x_22_3(0.22) + x_22_4(0.22) + x_22_5(0.22) + x_22_6(0.22) + x_22_7(0.22) + x_22_8(0.22) = 1
+	c1_1: 4.0 m_1 - 1.5 x_1_1(1.5) - 1.5 x_2_1(1.5) - 1.5 x_3_1(1.5) - 1.5 x_4_1(1.5) - 0.75 x_5_1(0.75) - 0.75 x_6_1(0.75) - 0.75 x_7_1(0.75) - 0.75 x_8_1(0.75) - 0.75 x_9_1(0.75) - 0.75 x_10_1(0.75) - 0.22 x_11_1(0.22) - 0.22 x_12_1(0.22) - 0.22 x_13_1(0.22) - 0.22 x_14_1(0.22) - 0.22 x_15_1(0.22) - 0.22 x_16_1(0.22) - 0.22 x_17_1(0.22) - 0.22 x_18_1(0.22) - 0.22 x_19_1(0.22) - 0.22 x_20_1(0.22) - 0.22 x_21_1(0.22) - 0.22 x_22_1(0.22) >= 0
+	c1_2: 4.0 m_2 - 1.5 x_1_2(1.5) - 1.5 x_2_2(1.5) - 1.5 x_3_2(1.5) - 1.5 x_4_2(1.5) - 0.75 x_5_2(0.75) - 0.75 x_6_2(0.75) - 0.75 x_7_2(0.75) - 0.75 x_8_2(0.75) - 0.75 x_9_2(0.75) - 0.75 x_10_2(0.75) - 0.22 x_11_2(0.22) - 0.22 x_12_2(0.22) - 0.22 x_13_2(0.22) - 0.22 x_14_2(0.22) - 0.22 x_15_2(0.22) - 0.22 x_16_2(0.22) - 0.22 x_17_2(0.22) - 0.22 x_18_2(0.22) - 0.22 x_19_2(0.22) - 0.22 x_20_2(0.22) - 0.22 x_21_2(0.22) - 0.22 x_22_2(0.22) >= 0
+	c1_3: 4.0 m_3 - 1.5 x_1_3(1.5) - 1.5 x_2_3(1.5) - 1.5 x_3_3(1.5) - 1.5 x_4_3(1.5) - 0.75 x_5_3(0.75) - 0.75 x_6_3(0.75) - 0.75 x_7_3(0.75) - 0.75 x_8_3(0.75) - 0.75 x_9_3(0.75) - 0.75 x_10_3(0.75) - 0.22 x_11_3(0.22) - 0.22 x_12_3(0.22) - 0.22 x_13_3(0.22) - 0.22 x_14_3(0.22) - 0.22 x_15_3(0.22) - 0.22 x_16_3(0.22) - 0.22 x_17_3(0.22) - 0.22 x_18_3(0.22) - 0.22 x_19_3(0.22) - 0.22 x_20_3(0.22) - 0.22 x_21_3(0.22) - 0.22 x_22_3(0.22) >= 0
+	c1_4: 4.0 m_4 - 1.5 x_1_4(1.5) - 1.5 x_2_4(1.5) - 1.5 x_3_4(1.5) - 1.5 x_4_4(1.5) - 0.75 x_5_4(0.75) - 0.75 x_6_4(0.75) - 0.75 x_7_4(0.75) - 0.75 x_8_4(0.75) - 0.75 x_9_4(0.75) - 0.75 x_10_4(0.75) - 0.22 x_11_4(0.22) - 0.22 x_12_4(0.22) - 0.22 x_13_4(0.22) - 0.22 x_14_4(0.22) - 0.22 x_15_4(0.22) - 0.22 x_16_4(0.22) - 0.22 x_17_4(0.22) - 0.22 x_18_4(0.22) - 0.22 x_19_4(0.22) - 0.22 x_20_4(0.22) - 0.22 x_21_4(0.22) - 0.22 x_22_4(0.22) >= 0
+	c1_5: 4.0 m_5 - 1.5 x_1_5(1.5) - 1.5 x_2_5(1.5) - 1.5 x_3_5(1.5) - 1.5 x_4_5(1.5) - 0.75 x_5_5(0.75) - 0.75 x_6_5(0.75) - 0.75 x_7_5(0.75) - 0.75 x_8_5(0.75) - 0.75 x_9_5(0.75) - 0.75 x_10_5(0.75) - 0.22 x_11_5(0.22) - 0.22 x_12_5(0.22) - 0.22 x_13_5(0.22) - 0.22 x_14_5(0.22) - 0.22 x_15_5(0.22) - 0.22 x_16_5(0.22) - 0.22 x_17_5(0.22) - 0.22 x_18_5(0.22) - 0.22 x_19_5(0.22) - 0.22 x_20_5(0.22) - 0.22 x_21_5(0.22) - 0.22 x_22_5(0.22) >= 0
+	c1_6: 4.0 m_6 - 1.5 x_1_6(1.5) - 1.5 x_2_6(1.5) - 1.5 x_3_6(1.5) - 1.5 x_4_6(1.5) - 0.75 x_5_6(0.75) - 0.75 x_6_6(0.75) - 0.75 x_7_6(0.75) - 0.75 x_8_6(0.75) - 0.75 x_9_6(0.75) - 0.75 x_10_6(0.75) - 0.22 x_11_6(0.22) - 0.22 x_12_6(0.22) - 0.22 x_13_6(0.22) - 0.22 x_14_6(0.22) - 0.22 x_15_6(0.22) - 0.22 x_16_6(0.22) - 0.22 x_17_6(0.22) - 0.22 x_18_6(0.22) - 0.22 x_19_6(0.22) - 0.22 x_20_6(0.22) - 0.22 x_21_6(0.22) - 0.22 x_22_6(0.22) >= 0
+	c1_7: 4.0 m_7 - 1.5 x_1_7(1.5) - 1.5 x_2_7(1.5) - 1.5 x_3_7(1.5) - 1.5 x_4_7(1.5) - 0.75 x_5_7(0.75) - 0.75 x_6_7(0.75) - 0.75 x_7_7(0.75) - 0.75 x_8_7(0.75) - 0.75 x_9_7(0.75) - 0.75 x_10_7(0.75) - 0.22 x_11_7(0.22) - 0.22 x_12_7(0.22) - 0.22 x_13_7(0.22) - 0.22 x_14_7(0.22) - 0.22 x_15_7(0.22) - 0.22 x_16_7(0.22) - 0.22 x_17_7(0.22) - 0.22 x_18_7(0.22) - 0.22 x_19_7(0.22) - 0.22 x_20_7(0.22) - 0.22 x_21_7(0.22) - 0.22 x_22_7(0.22) >= 0
+	c1_8: 4.0 m_8 - 1.5 x_1_8(1.5) - 1.5 x_2_8(1.5) - 1.5 x_3_8(1.5) - 1.5 x_4_8(1.5) - 0.75 x_5_8(0.75) - 0.75 x_6_8(0.75) - 0.75 x_7_8(0.75) - 0.75 x_8_8(0.75) - 0.75 x_9_8(0.75) - 0.75 x_10_8(0.75) - 0.22 x_11_8(0.22) - 0.22 x_12_8(0.22) - 0.22 x_13_8(0.22) - 0.22 x_14_8(0.22) - 0.22 x_15_8(0.22) - 0.22 x_16_8(0.22) - 0.22 x_17_8(0.22) - 0.22 x_18_8(0.22) - 0.22 x_19_8(0.22) - 0.22 x_20_8(0.22) - 0.22 x_21_8(0.22) - 0.22 x_22_8(0.22) >= 0
+	c2_1: x_1_1(1.5) + x_1_2(1.5) + x_1_3(1.5) + x_1_4(1.5) + x_1_5(1.5) + x_1_6(1.5) + x_1_7(1.5) + x_1_8(1.5) = 1
+	c2_2: x_2_1(1.5) + x_2_2(1.5) + x_2_3(1.5) + x_2_4(1.5) + x_2_5(1.5) + x_2_6(1.5) + x_2_7(1.5) + x_2_8(1.5) = 1
+	c2_3: x_3_1(1.5) + x_3_2(1.5) + x_3_3(1.5) + x_3_4(1.5) + x_3_5(1.5) + x_3_6(1.5) + x_3_7(1.5) + x_3_8(1.5) = 1
+	c2_4: x_4_1(1.5) + x_4_2(1.5) + x_4_3(1.5) + x_4_4(1.5) + x_4_5(1.5) + x_4_6(1.5) + x_4_7(1.5) + x_4_8(1.5) = 1
+	c2_5: x_5_1(0.75) + x_5_2(0.75) + x_5_3(0.75) + x_5_4(0.75) + x_5_5(0.75) + x_5_6(0.75) + x_5_7(0.75) + x_5_8(0.75) = 1
+	c2_6: x_6_1(0.75) + x_6_2(0.75) + x_6_3(0.75) + x_6_4(0.75) + x_6_5(0.75) + x_6_6(0.75) + x_6_7(0.75) + x_6_8(0.75) = 1
+	c2_7: x_7_1(0.75) + x_7_2(0.75) + x_7_3(0.75) + x_7_4(0.75) + x_7_5(0.75) + x_7_6(0.75) + x_7_7(0.75) + x_7_8(0.75) = 1
+	c2_8: x_8_1(0.75) + x_8_2(0.75) + x_8_3(0.75) + x_8_4(0.75) + x_8_5(0.75) + x_8_6(0.75) + x_8_7(0.75) + x_8_8(0.75) = 1
+	c2_9: x_9_1(0.75) + x_9_2(0.75) + x_9_3(0.75) + x_9_4(0.75) + x_9_5(0.75) + x_9_6(0.75) + x_9_7(0.75) + x_9_8(0.75) = 1
+	c2_10: x_10_1(0.75) + x_10_2(0.75) + x_10_3(0.75) + x_10_4(0.75) + x_10_5(0.75) + x_10_6(0.75) + x_10_7(0.75) + x_10_8(0.75) = 1
+	c2_11: x_11_1(0.22) + x_11_2(0.22) + x_11_3(0.22) + x_11_4(0.22) + x_11_5(0.22) + x_11_6(0.22) + x_11_7(0.22) + x_11_8(0.22) = 1
+	c2_12: x_12_1(0.22) + x_12_2(0.22) + x_12_3(0.22) + x_12_4(0.22) + x_12_5(0.22) + x_12_6(0.22) + x_12_7(0.22) + x_12_8(0.22) = 1
+	c2_13: x_13_1(0.22) + x_13_2(0.22) + x_13_3(0.22) + x_13_4(0.22) + x_13_5(0.22) + x_13_6(0.22) + x_13_7(0.22) + x_13_8(0.22) = 1
+	c2_14: x_14_1(0.22) + x_14_2(0.22) + x_14_3(0.22) + x_14_4(0.22) + x_14_5(0.22) + x_14_6(0.22) + x_14_7(0.22) + x_14_8(0.22) = 1
+	c2_15: x_15_1(0.22) + x_15_2(0.22) + x_15_3(0.22) + x_15_4(0.22) + x_15_5(0.22) + x_15_6(0.22) + x_15_7(0.22) + x_15_8(0.22) = 1
+	c2_16: x_16_1(0.22) + x_16_2(0.22) + x_16_3(0.22) + x_16_4(0.22) + x_16_5(0.22) + x_16_6(0.22) + x_16_7(0.22) + x_16_8(0.22) = 1
+	c2_17: x_17_1(0.22) + x_17_2(0.22) + x_17_3(0.22) + x_17_4(0.22) + x_17_5(0.22) + x_17_6(0.22) + x_17_7(0.22) + x_17_8(0.22) = 1
+	c2_18: x_18_1(0.22) + x_18_2(0.22) + x_18_3(0.22) + x_18_4(0.22) + x_18_5(0.22) + x_18_6(0.22) + x_18_7(0.22) + x_18_8(0.22) = 1
+	c2_19: x_19_1(0.22) + x_19_2(0.22) + x_19_3(0.22) + x_19_4(0.22) + x_19_5(0.22) + x_19_6(0.22) + x_19_7(0.22) + x_19_8(0.22) = 1
+	c2_20: x_20_1(0.22) + x_20_2(0.22) + x_20_3(0.22) + x_20_4(0.22) + x_20_5(0.22) + x_20_6(0.22) + x_20_7(0.22) + x_20_8(0.22) = 1
+	c2_21: x_21_1(0.22) + x_21_2(0.22) + x_21_3(0.22) + x_21_4(0.22) + x_21_5(0.22) + x_21_6(0.22) + x_21_7(0.22) + x_21_8(0.22) = 1
+	c2_22: x_22_1(0.22) + x_22_2(0.22) + x_22_3(0.22) + x_22_4(0.22) + x_22_5(0.22) + x_22_6(0.22) + x_22_7(0.22) + x_22_8(0.22) = 1
 Binary
 	m_1
 	m_2
@@ -373,7 +373,7 @@ objectif, dans ce projet cette fonction minimisera le nombre de
 planches à utiliser. $Subject\ To$ est une section dans laquelle nos 
 contraintes seront regroupées, comme il n'y a pas de mots clés pour 
 représenter une somme nous le ferons explicitement, ce qui explique 
-les \texttt{$c\_1\_j$} et \texttt{$c\_2\_i$} où $j$ est une planche 
+les \texttt{$c1\_j$} et \texttt{$c2\_i$} où $j$ est une planche 
 appartenant à $M$ et $i$ un panneau appartenant à $N$. Enfin, la 
 section $Binary$ contient toutes les variables binaires utilisées dans 
 notre modélisation, la nomenclature de ces variables a été choisie 
@@ -382,7 +382,7 @@ comme suit :
 \begin{itemize}
 	\item[] $m_j:$ représente la planche $j$
 	\item[] \texttt{$x\_i\_j(l_i):$} représente le panneau i de longueur 
-	$l_i$ découpée de la planche $j$
+	$l_i$ découpé de la planche $j$
 \end{itemize}  
 \section{Log de GLPK obtenu}
 \begin{verbatim}
@@ -395,36 +395,36 @@ comme suit :
 	
 	   No.   Row name        Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
-	     1 c_1_1                       0             0               
-	     2 c_1_2                    0.21             0               
-	     3 c_1_3                    1.75             0               
-	     4 c_1_4                       0             0               
-	     5 c_1_5                       0             0               
-	     6 c_1_6                       0             0               
-	     7 c_1_7                    0.78             0               
-	     8 c_1_8                    0.12             0               
-	     9 c_2_1                       1             1             = 
-	    10 c_2_2                       1             1             = 
-	    11 c_2_3                       1             1             = 
-	    12 c_2_4                       1             1             = 
-	    13 c_2_5                       1             1             = 
-	    14 c_2_6                       1             1             = 
-	    15 c_2_7                       1             1             = 
-	    16 c_2_8                       1             1             = 
-	    17 c_2_9                       1             1             = 
-	    18 c_2_10                      1             1             = 
-	    19 c_2_11                      1             1             = 
-	    20 c_2_12                      1             1             = 
-	    21 c_2_13                      1             1             = 
-	    22 c_2_14                      1             1             = 
-	    23 c_2_15                      1             1             = 
-	    24 c_2_16                      1             1             = 
-	    25 c_2_17                      1             1             = 
-	    26 c_2_18                      1             1             = 
-	    27 c_2_19                      1             1             = 
-	    28 c_2_20                      1             1             = 
-	    29 c_2_21                      1             1             = 
-	    30 c_2_22                      1             1             = 
+	     1 c1_1                       0             0               
+	     2 c1_2                    0.21             0               
+	     3 c1_3                    1.75             0               
+	     4 c1_4                       0             0               
+	     5 c1_5                       0             0               
+	     6 c1_6                       0             0               
+	     7 c1_7                    0.78             0               
+	     8 c1_8                    0.12             0               
+	     9 c2_1                       1             1             = 
+	    10 c2_2                       1             1             = 
+	    11 c2_3                       1             1             = 
+	    12 c2_4                       1             1             = 
+	    13 c2_5                       1             1             = 
+	    14 c2_6                       1             1             = 
+	    15 c2_7                       1             1             = 
+	    16 c2_8                       1             1             = 
+	    17 c2_9                       1             1             = 
+	    18 c2_10                      1             1             = 
+	    19 c2_11                      1             1             = 
+	    20 c2_12                      1             1             = 
+	    21 c2_13                      1             1             = 
+	    22 c2_14                      1             1             = 
+	    23 c2_15                      1             1             = 
+	    24 c2_16                      1             1             = 
+	    25 c2_17                      1             1             = 
+	    26 c2_18                      1             1             = 
+	    27 c2_19                      1             1             = 
+	    28 c2_20                      1             1             = 
+	    29 c2_21                      1             1             = 
+	    30 c2_22                      1             1             = 
 	
 	   No. Column name       Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
@@ -628,8 +628,8 @@ comme suit :
 \end{verbatim}
 \section{Explication du retour obtenu dans le fichier log}
 \subsection{Problème}
-Pour un problème avec 8 planches de 4 mètres dans lesquelles 4 panneaux 
-de 1,5 mètres, 6 panneaux de 75 centimètres et 12 panneaux de 22 
+Pour un problème avec 8 planches de 4 mètres à partir desquelles 4 
+panneaux de 1,5 mètres, 6 panneaux de 75 centimètres et 12 panneaux de 22 
 centimètres doivent être découpés, ce fichier log donne des informations
 générales sur ce problème et sa résolution.
 \subsection{Fonction objectif \ref{I}}
@@ -637,9 +637,9 @@ générales sur ce problème et sa résolution.
 	Objective:  obj = 4 (MINimum)
 \end{verbatim}
 La valeur de la fonction objectif indique que quatre est le nombre 
-minimum de planches utilisées. Par la suite, une solution détaillée
-détermine un plan de découpe des panneaux pour le nombre de planches 
-utilisées.
+minimum de planches qui devront être utilisées. Par la suite, une 
+solution détaillée détermine un plan de découpe des panneaux pour le 
+nombre de planches utilisées.
 \begin{verbatim}
 	No.     Column name       Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
@@ -658,7 +658,7 @@ les planches 2,3,7 et 8 où la valeur est égale à 1, ce qui est cohérent
 avec la valeur de la fonction objectif.
 \subsection{Contrainte \ref{c1}}
 Prenons la planche 2 comme exemple, nous voulons obtenir son plan de 
-découpe, nous allons donc extraire ces lignes du dessous du fichier log.
+découpe, nous allons donc extraire ces lignes ci-dessous du fichier log.
 \begin{verbatim}
 	No.       Row name        Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
@@ -679,17 +679,17 @@ découpe, nous allons donc extraire ces lignes du dessous du fichier log.
 \end{verbatim}
 La première ligne a comme nom de variable \texttt{$x\_6\_2(0.75)$} ce 
 qui signifie selon la nomenclature établie au début que le panneau 6 
-d'une longueur de 0.75 mètres a été coupé de la planche 2. Suivant le 
+d'une longueur de 0.75 mètre a été découpé de la planche 2. Suivant le 
 même principe, nous déduirons que la planche 2 a été utilisée pour 
 découper 3 panneaux de 0,75 mètre et 7 panneaux de 0,22 mètre. La 
-contrainte 1 pour la planche 2 (\texttt{$c\_1\_2$}) nous donne une 
+contrainte 1 pour la planche 2 (\texttt{$c1\_2$}) nous donne une 
 $Activity$ de 0,21 qui correspond à la soustraction de la longueur de 
 la planche de la somme des panneaux découpés, soit $4 - 3 \cdot 0,75 - 
 7 \cdot 0,22 = 0,21$.
 \subsection{Contrainte \ref{c2}}
 Prenons un panneau de ceux utilisés dans la découpe de la planche 2, dans 
 notre cas nous serons intéressés par le panneau 6, pour mieux visualiser 
-la résolution du fichier journal nous prenons ces morceaux de lignes.
+la résolution du fichier log nous prenons ces morceaux de lignes.
 \begin{verbatim}
 	No.       Row name        Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
@@ -705,17 +705,17 @@ la résolution du fichier journal nous prenons ces morceaux de lignes.
 	   146 x_6_7(0.75)  *              0             0             1 
 	   168 x_6_8(0.75)  *              0             0             1 
 \end{verbatim}
-Comme le montre la colonne $Activity$ pour \texttt{$c\_2\_6$} le 
-panneau a été découpé et seulement une fois, pour vérifier que la 
-contrainte a été respectée nous passons par les lignes restantes. 
-En examinant l'activité du panneau 6, nous verrons qu'il n'est utilisé
-qu'une seule fois et qu'il l'a été par la planche 2 
+Comme le montre la colonne $Activity$ pour \texttt{$c2\_6$} le 
+panneau a bien été découpé et seulement une fois, pour vérifier que la 
+contrainte a été respectée nous passons en revue par les lignes restantes. 
+En examinant l'activité du panneau 6, nous voyons qu'il n'est découpé
+qu'une seule fois et qu'il l'a été depuis la planche 2 
 ($\texttt{$x\_6\_2(0.75)$} = 1$).
 \subsection{Plan de découpe}
 En répétant la même analyse sur les autres planches et panneaux, nous
-obtiendrons le plan de découpe suivant :
+obtenons le plan de découpe suivant :
 \begin{center}
-	\begin{tabular} {| l | l | l | l | l | l | l | l | l |}
+	\begin{tabular} {| c | c | c | c | c | c | c | c | c |}
 		\hline
 		$Planche$				&$\ 1 \ $	&$\ 2 \ $	&$\ 3 \ $	&$\ 4 \ $ 	&$\ 5 \ $	&$\ 6 \ $	&$\ 7 \ $	&$\ 8 \ $	\\
 		\hline

@@ -34,11 +34,11 @@ objective = "\tobj: " + " + ".join("m_{}".format(i) for i in range(1, M + 1)) + 
 constraints = ""
 # Contrainte 1 :
 for j in range(1, M + 1):
-    constraints += "\tc_1_{}: {} m_{} - ".format(j, L, j) + " - ".join("{} x_{}_{}({})".format(l_i[i - 1], i, j, l_i[i - 1]) for i in range(1, N + 1))
+    constraints += "\tc1_{}: {} m_{} - ".format(j, L, j) + " - ".join("{} x_{}_{}({})".format(l_i[i - 1], i, j, l_i[i - 1]) for i in range(1, N + 1))
     constraints += " >= 0\n".format(L, j)
 # Contrainte 2 :
 for i in range(1, N + 1):
-    constraints += "\tc_2_{}: ".format(i) + " + ".join("x_{}_{}({})".format(i, j, l_i[i - 1]) for j in range(1, M + 1))
+    constraints += "\tc2_{}: ".format(i) + " + ".join("x_{}_{}({})".format(i, j, l_i[i - 1]) for j in range(1, M + 1))
     constraints += " = 1\n"
 
 # Variables de décision :
