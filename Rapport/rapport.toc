@@ -6,3 +6,8 @@
 \contentsline {section}{\numberline {5}Explication du fichier CPLEX LP g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}}{10}{section.5}
 \contentsline {section}{\numberline {6}Log de GLPK obtenu}{10}{section.6}
 \contentsline {section}{\numberline {7}Explication du retour obtenu dans le fichier log}{17}{section.7}
+\contentsline {subsection}{\numberline {7.1}Probl\IeC {\`e}me}{17}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Fonction objectif \ref {I}}{18}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Contrainte \ref {c1}}{18}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Contrainte \ref {c2}}{19}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Plan de d\IeC {\'e}coupe}{20}{subsection.7.5}

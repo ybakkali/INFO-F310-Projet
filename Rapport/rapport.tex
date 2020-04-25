@@ -104,10 +104,10 @@ Variables de décision :
 \begin{algorithm}[H]
 \caption{Formulation linéaire}
 \begin{alignat}{4}
-    \min        &\quad& \sum\limits_{j \in M} m_{j}                        &                                   &\\
-	\text{s.t.} &\quad& \sum\limits_{i \in N} l_{i} x_{i,j}                &\leq L m_{j}                       &\quad\forall j \in M\\ 
-                &\quad& \sum\limits_{j \in M} x_{i,j}                      & = 1                               &\quad\forall i \in N\\
-                &\quad& x_{i,j}                                            &\in \left\{0, 1\right\}            &\quad\forall i \in N, 	&\quad\forall j \in M\\
+    \min        &\quad& \sum\limits_{j \in M} m_{j}                        &                                   &\tag{I} \label{I}\\
+	\text{s.t.} &\quad& \sum\limits_{i \in N} l_{i} x_{i,j}                &\leq L m_{j}                       &\quad\forall j \in M \label{c1}\\ 
+                &\quad& \sum\limits_{j \in M} x_{i,j}                      & = 1                               &\quad\forall i \in N \label{c2}\\
+                &\quad& x_{i,j}                                            &\in \left\{0, 1\right\}            &\quad\forall i \in N, &\quad\forall j \in M\\
                 &\quad& m_{j}                                              &\in \left\{0, 1\right\}            &\quad\forall j \in M
 \end{alignat}
 \end{algorithm}
@@ -627,10 +627,12 @@ comme suit :
 	
 \end{verbatim}
 \section{Explication du retour obtenu dans le fichier log}
+\subsection{Problème}
 Pour un problème avec 8 planches de 4 mètres dans lesquelles 4 panneaux 
 de 1,5 mètres, 6 panneaux de 75 centimètres et 12 panneaux de 22 
 centimètres doivent être découpés, ce fichier log donne des informations
 générales sur ce problème et sa résolution.
+\subsection{Fonction objectif \ref{I}}
 \begin{verbatim}
 	Objective:  obj = 4 (MINimum)
 \end{verbatim}
@@ -654,6 +656,9 @@ utilisées.
 Comme indiqué dans la colonne $Activity$, la solution trouvée utilise 
 les planches 2,3,7 et 8 où la valeur est égale à 1, ce qui est cohérent 
 avec la valeur de la fonction objectif.
+\subsection{Contrainte \ref{c1}}
+Prenons la planche 2 comme exemple, nous voulons obtenir son plan de 
+découpe, nous allons donc extraire ces lignes du dessous du fichier log.
 \begin{verbatim}
 	No.       Row name        Activity     Lower bound   Upper bound
 	------ ------------    ------------- ------------- -------------
@@ -672,20 +677,43 @@ avec la valeur de la fonction objectif.
 	    47 x_17_2(0.22) *              1             0             1 
 
 \end{verbatim}
-Prenons la planche 2, nous voulons obtenir son plan de découpe, nous 
-allons donc extraire ces lignes du dessus du fichier log. La première 
-ligne a comme nom de variable \texttt{$x\_6\_2(0.75)$} ce qui signifie 
-selon la nomenclature établie au début que le panneau 6 d'une longueur 
-de 0.75 mètres a été coupé de la planche 2. Suivant le même principe,
-nous déduirons que la planche 2 a été utilisée pour découper 3 
-panneaux de 0,75 mètre et 7 panneaux de 0,22 mètre. La contrainte 1 
-pour la planche 2 (\texttt{$c\_1\_2$}) nous donne une $Activity$ de 0,21 
-qui correspond à la soustraction de la longueur de la planche de la 
-somme des panneaux découpés, soit $4 - 3 \cdot 0,75 - 7 \cdot 0,22 = 
-0,21$.
-
-Pour obtenir le plan de découpe final, nous allons répéter la même 
-analyse sur les autres planches ce qui nous donnera le plan suivant:
+La première ligne a comme nom de variable \texttt{$x\_6\_2(0.75)$} ce 
+qui signifie selon la nomenclature établie au début que le panneau 6 
+d'une longueur de 0.75 mètres a été coupé de la planche 2. Suivant le 
+même principe, nous déduirons que la planche 2 a été utilisée pour 
+découper 3 panneaux de 0,75 mètre et 7 panneaux de 0,22 mètre. La 
+contrainte 1 pour la planche 2 (\texttt{$c\_1\_2$}) nous donne une 
+$Activity$ de 0,21 qui correspond à la soustraction de la longueur de 
+la planche de la somme des panneaux découpés, soit $4 - 3 \cdot 0,75 - 
+7 \cdot 0,22 = 0,21$.
+\subsection{Contrainte \ref{c2}}
+Prenons un panneau de ceux utilisés dans la découpe de la planche 2, dans 
+notre cas nous serons intéressés par le panneau 6, pour mieux visualiser 
+la résolution du fichier journal nous prenons ces morceaux de lignes.
+\begin{verbatim}
+	No.       Row name        Activity     Lower bound   Upper bound
+	------ ------------    ------------- ------------- -------------
+	    14 c_2_6                       1             1             = 
+	No.     Column name       Activity     Lower bound   Upper bound
+	------ ------------    ------------- ------------- -------------
+	    14 x_6_1(0.75)  *              0             0             1 
+	    36 x_6_2(0.75)  *              1             0             1 
+	    58 x_6_3(0.75)  *              0             0             1 
+	    80 x_6_4(0.75)  *              0             0             1 
+	   102 x_6_5(0.75)  *              0             0             1 
+	   124 x_6_6(0.75)  *              0             0             1 
+	   146 x_6_7(0.75)  *              0             0             1 
+	   168 x_6_8(0.75)  *              0             0             1 
+\end{verbatim}
+Comme le montre la colonne $Activity$ pour \texttt{$c\_2\_6$} le 
+panneau a été découpé et seulement une fois, pour vérifier que la 
+contrainte a été respectée nous passons par les lignes restantes. 
+En examinant l'activité du panneau 6, nous verrons qu'il n'est utilisé
+qu'une seule fois et qu'il l'a été par la planche 2 
+($\texttt{$x\_6\_2(0.75)$} = 1$).
+\subsection{Plan de découpe}
+En répétant la même analyse sur les autres planches et panneaux, nous
+obtiendrons le plan de découpe suivant :
 \begin{center}
 	\begin{tabular} {| l | l | l | l | l | l | l | l | l |}
 		\hline

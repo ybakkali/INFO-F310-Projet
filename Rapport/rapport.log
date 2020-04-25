@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.18)  25 APR 2020 03:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.18)  25 APR 2020 15:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,7 +677,15 @@ LaTeX Info: Redefining \nameref on input line 24.
 \c@lstlisting=\count134
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/yahyabakkali/Bureau/BA3-Projets/INFO-F310/INFO-F310-Projet/Rapport/rapport.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/yahyabakkali/Bureau/BA3-Projets/INFO-F310/INFO-F310-Projet/Rapport/rapport.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
@@ -686,43 +694,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.61 \newpage
               [1]
-LaTeX Font Info:    Try loading font information for U+msa on input line 74.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 74.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 105.
  [2]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 121.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
+) [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 730.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 730.
  (/home/yahyabakkali/Bureau/BA3-Projets/INFO-F310/INFO-F310-Projet/Rapport/rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 730.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 730.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: F6D13F00E3AE595F55E6CB34EABA796B;424.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
+(rerunfilecheck)             Checksum: 6D5734997407CD3F9F8E77E5413795FA;744.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 730.
  ) 
 Here is how much of TeX's memory you used:
- 9632 strings out of 494821
- 134131 string characters out of 6177891
+ 9653 strings out of 494821
+ 134367 string characters out of 6177891
  392903 words of memory out of 5000000
- 12591 multiletter control sequences out of 15000+600000
- 23067 words of font info for 63 fonts, out of 8000000 for 9000
+ 12603 multiletter control sequences out of 15000+600000
+ 25686 words of font info for 67 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  28i,11n,32p,553b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on /home/yahyabakkali/Bureau/BA3-Projets/INFO-F310/INFO-F310-Projet/Rapport/rapport.pdf (20 pages, 219912 bytes).
+ </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/yahyabakkali/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on /home/yahyabakkali/Bureau/BA3-Projets/INFO-F310/INFO-F310-Projet/Rapport/rapport.pdf (21 pages, 233423 bytes).
 PDF statistics:
- 830 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 254 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 909 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

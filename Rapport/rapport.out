@@ -5,3 +5,8 @@
 \BOOKMARK [1][-]{section.5}{Explication du fichier CPLEX LP g\351n\351r\351}{}% 5
 \BOOKMARK [1][-]{section.6}{Log de GLPK obtenu}{}% 6
 \BOOKMARK [1][-]{section.7}{Explication du retour obtenu dans le fichier log}{}% 7
+\BOOKMARK [2][-]{subsection.7.1}{Probl\350me}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Fonction objectif I}{section.7}% 9
+\BOOKMARK [2][-]{subsection.7.3}{Contrainte 1}{section.7}% 10
+\BOOKMARK [2][-]{subsection.7.4}{Contrainte 2}{section.7}% 11
+\BOOKMARK [2][-]{subsection.7.5}{Plan de d\351coupe}{section.7}% 12
